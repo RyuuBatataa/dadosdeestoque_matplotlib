@@ -1,0 +1,70 @@
+import matplotlib.pyplot as plt
+
+print("Exibindo Gráfico 1: Linha")
+
+dias = [1, 2, 3, 4, 5, 6, 7]
+estoque_semana = [100, 95, 110, 105, 120, 115, 130]
+
+plt.figure(figsize=(8, 5))
+plt.plot(dias, estoque_semana, marker='o', linestyle='-', color='b', label='Estoque')
+
+plt.title('1. Tendência de Estoque Diário')
+plt.xlabel('Dia')
+plt.ylabel('Quantidade em Estoque')
+
+plt.xticks(dias)
+plt.legend()
+plt.grid(True)
+plt.show()
+
+
+print("Exibindo Gráfico 2: Barras")
+
+produtos = ['Teclado', 'Mouse', 'Monitor', 'Webcam']
+quantidades = [50, 75, 30, 60]
+
+plt.figure(figsize=(8, 5))
+plt.bar(produtos, quantidades, color=['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728'])
+
+plt.title('2. Comparação de Quantidades por Produto')
+plt.xlabel('Produto')
+plt.ylabel('Quantidade em Estoque')
+
+plt.ylim(0, max(quantidades) + 10)
+
+for i in range(len(produtos)):
+    plt.text(i, quantidades[i] + 1, str(quantidades[i]), ha='center', va='bottom')
+
+plt.show()  
+
+
+print("Exibindo Gráfico 3: Pizza")
+
+categorias = ['Eletrônicos', 'Vestuário', 'Alimentos']
+valores = [15000, 8000, 5000]
+
+plt.figure(figsize=(7, 7))
+plt.pie(valores, labels=categorias, autopct='%1.1f%%', startangle=140, shadow=True)
+
+plt.title('3. Proporção do Valor de Estoque por Categoria')
+plt.axis('equal')
+plt.legend(title="Categorias", loc="best")
+plt.show()
+
+
+print("Gráfico 4: Dispersão")
+
+precos = [50, 120, 300, 80, 20]
+estoque_itens = [80, 25, 10, 70, 150]
+
+plt.figure(figsize=(8, 5))
+plt.scatter(precos, estoque_itens, alpha=0.7, color='r', s=100)
+
+plt.title('4. Relação Preço Unitário vs. Quantidade')
+plt.xlabel('Preço Unitário (R$)')
+plt.ylabel('Quantidade em Estoque')
+
+plt.grid(True)
+plt.show()
+
+print("Fim da análise.")
